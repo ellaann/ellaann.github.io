@@ -59,24 +59,7 @@ data-flex-basis="180px"
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">link&lt;/span> &lt;span class="na">rel&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;manifest&amp;#34;&lt;/span> &lt;span class="na">href&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;/site.webmanifest&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>就是这样！希望你们也能成功~&lt;/p></description></item><item><title>About</title><link>https://example.com/about/</link><pubDate>Wed, 01 Feb 2023 00:00:00 +0000</pubDate><guid>https://example.com/about/</guid><description>&lt;h2 id="-站主是谁">🍭 站主是谁？&lt;/h2>
-&lt;ul>
-&lt;li>又菜又爱玩&lt;/li>
-&lt;li>网球1.0&lt;/li>
-&lt;li>磕cp学泰语&lt;/li>
-&lt;/ul>
-&lt;h2 id="-技能">⚽️ 技能&lt;/h2>
-&lt;ul>
-&lt;li>自学python，正在学(golang)&lt;/li>
-&lt;li>爱旅游，做攻略&lt;/li>
-&lt;li>学摄影，懂构图&lt;/li>
-&lt;/ul>
-&lt;h2 id="-关于本站">🎨 关于本站&lt;/h2>
-&lt;ul>
-&lt;li>这里是 Edrain&amp;rsquo;s Blog ，由 Edrain 建于 2023 年 2 月 1 日&lt;/li>
-&lt;li>使用 Hugo 作为框架，Stack 作为主题&lt;/li>
-&lt;li>部署在 Github Page&lt;/li>
-&lt;/ul></description></item><item><title>TestOps Plantform First Demo</title><link>https://example.com/p/testops-plantform-first-demo/</link><pubDate>Wed, 08 Jan 2020 23:51:50 +0800</pubDate><guid>https://example.com/p/testops-plantform-first-demo/</guid><description>&lt;h1 id="testops-plantform-first-demo">TestOps Plantform First Demo&lt;/h1>
+&lt;/div>&lt;p>就是这样！希望你们也能成功~&lt;/p></description></item><item><title>TestOps Plantform First Demo</title><link>https://example.com/p/testops-plantform-first-demo/</link><pubDate>Wed, 08 Jan 2020 23:51:50 +0800</pubDate><guid>https://example.com/p/testops-plantform-first-demo/</guid><description>&lt;h1 id="testops-plantform-first-demo">TestOps Plantform First Demo&lt;/h1>
 &lt;h2 id="项目实现功能">项目实现功能&lt;/h2>
 &lt;p>1、注册&lt;/p>
 &lt;p>&lt;img src="https://github.com/edrainann/TestOpsPlatform/raw/master/ReadMe_Photos/sign_up.png"
@@ -596,4 +579,21 @@ alt="image"
 &lt;p>datetime.datetime.utcnow()：
 如果setting中配置USE_TZ=True则输出的是UTC时间（naive time）;如果setting中配置USE_TZ=False，则该输出时间与datetime.datetime.now()完全相同。&lt;/p>
 &lt;p>django.util.timezone.now()：
-如果setting中配置USE_TZ=True则输出的是UTC时间（active time），如果配置USE_TZ=False，则与datetime.datetime.now()完全相同。&lt;/p></description></item><item><title>Archives</title><link>https://example.com/archives/</link><pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate><guid>https://example.com/archives/</guid><description/></item><item><title>Links</title><link>https://example.com/links/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://example.com/links/</guid><description>&lt;p>🤑这里存放了自己感兴趣的站点链接&lt;/p></description></item><item><title>Search</title><link>https://example.com/search/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://example.com/search/</guid><description/></item></channel></rss>
+如果setting中配置USE_TZ=True则输出的是UTC时间（active time），如果配置USE_TZ=False，则与datetime.datetime.now()完全相同。&lt;/p></description></item><item><title>Archives</title><link>https://example.com/archives/</link><pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate><guid>https://example.com/archives/</guid><description/></item><item><title>About</title><link>https://example.com/about/</link><pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate><guid>https://example.com/about/</guid><description>&lt;h2 id="-站主是谁">🍭 站主是谁？&lt;/h2>
+&lt;ul>
+&lt;li>又菜又爱玩&lt;/li>
+&lt;li>网球1.0&lt;/li>
+&lt;li>磕cp学泰语&lt;/li>
+&lt;/ul>
+&lt;h2 id="-技能">⚽️ 技能&lt;/h2>
+&lt;ul>
+&lt;li>自学python，正在学(golang)&lt;/li>
+&lt;li>爱旅游，做攻略&lt;/li>
+&lt;li>学摄影，懂构图&lt;/li>
+&lt;/ul>
+&lt;h2 id="-关于本站">🎨 关于本站&lt;/h2>
+&lt;ul>
+&lt;li>这里是 Edrain&amp;rsquo;s Blog ，由 Edrain 建于 2018 年 1 月 1 日&lt;/li>
+&lt;li>使用 Hugo 作为框架，Stack 作为主题&lt;/li>
+&lt;li>部署在 Github Page&lt;/li>
+&lt;/ul></description></item><item><title>Links</title><link>https://example.com/links/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://example.com/links/</guid><description>&lt;p>🤑这里存放了自己感兴趣的站点链接&lt;/p></description></item><item><title>Search</title><link>https://example.com/search/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://example.com/search/</guid><description/></item></channel></rss>
