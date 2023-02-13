@@ -48,12 +48,12 @@ alt="image"
 loading="lazy"
 alt="image"
 >&lt;/p>
-&lt;h2 id="一官方文档">一、官方文档&lt;/h2>
+&lt;h2 id="官方文档">官方文档&lt;/h2>
 &lt;p>Django中文官网: &lt;a class="link" href="https://docs.djangoproject.com/zh-hans/3.0/" target="_blank" rel="noopener"
 >https://docs.djangoproject.com/zh-hans/3.0/&lt;/a>&lt;/p>
 &lt;p>Django英文官网: &lt;a class="link" href="https://docs.djangoproject.com/en/3.0/" target="_blank" rel="noopener"
 >https://docs.djangoproject.com/en/3.0/&lt;/a>&lt;/p>
-&lt;h2 id="二初始化">二、初始化&lt;/h2>
+&lt;h2 id="初始化">初始化&lt;/h2>
 &lt;h3 id="1创建项目">1、创建项目&lt;/h3>
 &lt;p>使用 startproject 来创建项目&lt;/p>
 &lt;p>&lt;code>django-admin startproject edrainsite&lt;/code>&lt;/p>
@@ -105,7 +105,7 @@ alt="image"
 &lt;li>&lt;strong>tests.py：&lt;/strong> 创建Django测试用例；&lt;/li>
 &lt;li>&lt;strong>views.py：&lt;/strong> Django的视图文件，控制向前段页面显示的内容。&lt;/li>
 &lt;/ul>
-&lt;h2 id="三编写第一个视图">三、编写第一个视图&lt;/h2>
+&lt;h2 id="编写第一个视图">编写第一个视图&lt;/h2>
 &lt;h3 id="1打开-signviewspy">1、打开 &lt;code>sign/views.py&lt;/code>&lt;/h3>
 &lt;p>把下面这些 Python 代码输入进去：&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
@@ -178,7 +178,7 @@ alt="image"
 &lt;blockquote>
 &lt;p>当包括其它 URL 模式时你应该总是使用 &lt;code>include()&lt;/code> ， &lt;code>admin.site.urls&lt;/code> 是唯一例外。&lt;/p>
 &lt;/blockquote>
-&lt;h2 id="四通过templates来展示页面">四、通过templates来展示页面&lt;/h2>
+&lt;h2 id="通过templates来展示页面">通过templates来展示页面&lt;/h2>
 &lt;h3 id="1在sign文件夹下面创建templates文件夹">1、在sign文件夹下面，创建&lt;code>templates&lt;/code>文件夹&lt;/h3>
 &lt;h3 id="2创建signhtml文件">2、创建sign.html文件&lt;/h3>
 &lt;div class="highlight">&lt;div class="chroma">
@@ -259,7 +259,7 @@ alt="image"
 >&lt;code>INSTALLED_APPS&lt;/code>&lt;/a> 文件夹中寻找 &amp;ldquo;templates&amp;rdquo; 子目录。这就是为什么尽管我们没有像在第二部分中那样修改 DIRS 设置，Django 也能正确找到 polls 的模板位置的原因。&lt;/p>
 &lt;p>输入网址：&lt;a class="link" href="http://127.0.0.1:8028/sign/" target="_blank" rel="noopener"
 >http://127.0.0.1:8028/sign/&lt;/a>&lt;/p>
-&lt;h2 id="五数据库配置">五、数据库配置&lt;/h2>
+&lt;h2 id="数据库配置">数据库配置&lt;/h2>
 &lt;p>Django 提供完善的模型（model）层主要用来创建和存取数据，不需要我们直接对数据库操作。&lt;/p>
 &lt;p>&lt;strong>Django模型的基础知识：&lt;/strong>&lt;/p>
 &lt;ul>
@@ -347,7 +347,7 @@ alt="image"
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">运行 python manage.py migrate 来应用数据库迁移。
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;h2 id="六认证登录">六、认证登录&lt;/h2>
+&lt;/div>&lt;h2 id="认证登录">认证登录&lt;/h2>
 &lt;h3 id="1创建admin系统用户">1、创建admin系统用户&lt;/h3>
 &lt;p>&lt;code>...\&amp;gt; python manage.py createsuperuser&lt;/code>&lt;/p>
 &lt;h3 id="2输入用户密码信息">2、输入用户、密码信息&lt;/h3>
@@ -391,7 +391,7 @@ alt="image"
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">uperuser created successfully.
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;h2 id="七开发模式">七、开发模式&lt;/h2>
+&lt;/div>&lt;h2 id="开发模式">开发模式&lt;/h2>
 &lt;p>这段话在Django官方文档也曾出现过：鼓励松耦合以及对应用程序中不同部分的严格分割。&lt;/p>
 &lt;h3 id="1mvc开发模式">1、MVC开发模式&lt;/h3>
 &lt;p>MVC：Model-View-Controller&lt;/p>
@@ -414,7 +414,7 @@ alt="image"
 &lt;li>Template：模板，表现层，该层处理与表现相关的所有事务，即如何在页面或者其他类型文档中进行显示；&lt;/li>
 &lt;li>View：视图，业务逻辑层，该层包含存取模型及调取恰当模板的相关逻辑，可以看作是模型和模板之间的桥梁。&lt;/li>
 &lt;/ul>
-&lt;h2 id="八小技巧">八、小技巧&lt;/h2>
+&lt;h2 id="小技巧">小技巧&lt;/h2>
 &lt;h3 id="1去除模板中的硬编码-url">1、去除模板中的硬编码 URL&lt;/h3>
 &lt;p>1）修改&lt;code>sign/templates/sign/sign_in.html&lt;/code>文件&lt;/p>
 &lt;p>当发送登录请求时，链接是硬编码的：&lt;/p>
@@ -494,7 +494,7 @@ alt="image"
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>链接：https://blog.csdn.net/weixin_42134789/article/details/81505963&lt;/p>
-&lt;h2 id="九疑问">九、疑问&lt;/h2>
+&lt;h2 id="qa">Q&amp;amp;A&lt;/h2>
 &lt;h3 id="q1dbsqlite3是什么">Q1：db.sqlite3是什么？&lt;/h3>
 &lt;p>A1：链接：&lt;a class="link" href="https://www.runoob.com/sqlite/sqlite-intro.html" target="_blank" rel="noopener"
 >https://www.runoob.com/sqlite/sqlite-intro.html&lt;/a>&lt;/p>
