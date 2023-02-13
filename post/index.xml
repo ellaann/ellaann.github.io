@@ -59,4 +59,524 @@ data-flex-basis="180px"
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">link&lt;/span> &lt;span class="na">rel&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;manifest&amp;#34;&lt;/span> &lt;span class="na">href&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;/site.webmanifest&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>就是这样！希望你们也能成功~&lt;/p></description></item></channel></rss>
+&lt;/div>&lt;p>就是这样！希望你们也能成功~&lt;/p></description></item><item><title>TestOps Plantform First Demo</title><link>https://example.com/p/testops-plantform-first-demo/</link><pubDate>Wed, 08 Jan 2020 23:51:50 +0800</pubDate><guid>https://example.com/p/testops-plantform-first-demo/</guid><description>&lt;h1 id="testops-plantform-first-demo">TestOps Plantform First Demo&lt;/h1>
+&lt;h2 id="项目实现功能">项目实现功能&lt;/h2>
+&lt;p>1、注册&lt;/p>
+&lt;p>&lt;img src="https://github.com/edrainann/TestOpsPlatform/raw/master/ReadMe_Photos/sign_up.png"
+loading="lazy"
+alt="image"
+>&lt;/p>
+&lt;p>2、登录&lt;/p>
+&lt;p>&lt;img src="https://github.com/edrainann/TestOpsPlatform/raw/master/ReadMe_Photos/sign_in.png"
+loading="lazy"
+alt="image"
+>&lt;/p>
+&lt;p>3、登录后的主页显示&lt;/p>
+&lt;p>&lt;img src="https://github.com/edrainann/TestOpsPlatform/raw/master/ReadMe_Photos/index.png"
+loading="lazy"
+alt="image"
+>&lt;/p>
+&lt;p>4、网站归纳&lt;/p>
+&lt;p>1）公司网站&lt;/p>
+&lt;p>&lt;img src="https://github.com/edrainann/TestOpsPlatform/raw/master/ReadMe_Photos/company_websites_online.png"
+loading="lazy"
+alt="image"
+>&lt;/p>
+&lt;p>2）常用网站&lt;/p>
+&lt;p>&lt;img src="https://github.com/edrainann/TestOpsPlatform/raw/master/ReadMe_Photos/common_websites.png"
+loading="lazy"
+alt="image"
+>&lt;/p>
+&lt;p>3）新增网站&lt;/p>
+&lt;p>&lt;img src="https://github.com/edrainann/TestOpsPlatform/raw/master/ReadMe_Photos/add_new.gif"
+loading="lazy"
+alt="image"
+>&lt;/p>
+&lt;p>5、项目部署&amp;amp;上线&lt;/p>
+&lt;p>1）测试环境部署&lt;/p>
+&lt;p>&lt;img src="https://github.com/edrainann/TestOpsPlatform/raw/master/ReadMe_Photos/test_env_deploy.png"
+loading="lazy"
+alt="image"
+>&lt;/p>
+&lt;p>2）通过dwebsocket,实现与服务器连接，输入查询指令后，页面的实时滚动&lt;/p>
+&lt;p>&lt;img src="https://github.com/edrainann/TestOpsPlatform/raw/master/ReadMe_Photos/test_deploy.gif"
+loading="lazy"
+alt="image"
+>&lt;/p>
+&lt;p>6、SQL同步&lt;/p>
+&lt;p>&lt;img src="https://github.com/edrainann/TestOpsPlatform/raw/master/ReadMe_Photos/sql_sync.png"
+loading="lazy"
+alt="image"
+>&lt;/p>
+&lt;h2 id="一官方文档">一、官方文档&lt;/h2>
+&lt;p>Django中文官网: &lt;a class="link" href="https://docs.djangoproject.com/zh-hans/3.0/" target="_blank" rel="noopener"
+>https://docs.djangoproject.com/zh-hans/3.0/&lt;/a>&lt;/p>
+&lt;p>Django英文官网: &lt;a class="link" href="https://docs.djangoproject.com/en/3.0/" target="_blank" rel="noopener"
+>https://docs.djangoproject.com/en/3.0/&lt;/a>&lt;/p>
+&lt;h2 id="二初始化">二、初始化&lt;/h2>
+&lt;h3 id="1创建项目">1、创建项目&lt;/h3>
+&lt;p>使用 startproject 来创建项目&lt;/p>
+&lt;p>&lt;code>django-admin startproject edrainsite&lt;/code>&lt;/p>
+&lt;p>项目显示：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;span class="lnt">8
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">test_ops/
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> manage.py
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> test_ops/
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> __init__.py
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> settings.py
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> urls.py
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> asgi.py
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> wsgi.py
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>这些目录和文件的用处是：&lt;/p>
+&lt;ul>
+&lt;li>The outer &lt;code>test_ops/&lt;/code> root directory is a container for your project. Its name doesn&amp;rsquo;t matter to Django; you can rename it to anything you like.&lt;/li>
+&lt;li>manage.py: 一个让你用各种方式管理 Django 项目的命令行工具。你可以阅读 django-admin and manage.py 获取所有 manage.py 的细节。&lt;/li>
+&lt;li>里面一层的 test_ops/ 目录包含你的项目，它是一个纯 Python 包。它的名字就是当你引用它内部任何东西时需要用到的 Python 包名。 (比如 test_ops.urls).&lt;/li>
+&lt;li>test_ops/&lt;strong>init&lt;/strong>.py：一个空文件，告诉 Python 这个目录应该被认为是一个 Python 包。如果你是 Python 初学者，阅读官方文档中的 更多关于包的知识。&lt;/li>
+&lt;li>test_ops/settings.py：Django 项目的配置文件。如果你想知道这个文件是如何工作的，请查看 Django 配置 了解细节。&lt;/li>
+&lt;li>test_ops/urls.py：Django 项目的 URL 声明，就像你网站的“目录”。阅读 URL调度器 文档来获取更多关于 URL 的内容。&lt;/li>
+&lt;li>test_ops/asgi.py: 兼容ASGI的Web服务器为您的项目提供服务的入口点。See How to deploy with ASGI for more details.&lt;/li>
+&lt;li>test_ops/wsgi.py：作为你的项目的运行在 WSGI 兼容的Web服务器上的入口。阅读 如何使用 WSGI 进行部署 了解更多细节。&lt;/li>
+&lt;/ul>
+&lt;h3 id="2运行项目">2、运行项目&lt;/h3>
+&lt;p>&lt;code>py manage.py runserver 127.0.0.1:8028&lt;/code>
+样就可以运行起来啦 打开网址：http://127.0.0.1:8028/ 进行校验&lt;/p>
+&lt;h3 id="3创建应用">3、创建应用&lt;/h3>
+&lt;p>&lt;code>py manage.py startapp sign&lt;/code>&lt;/p>
+&lt;p>这些目录和文件的用处是：&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>migrations/：&lt;/strong> 用于记录models中数据的变更；&lt;/li>
+&lt;li>&lt;strong>admin.py：&lt;/strong> 映射models中的数据到Django自带的admin后台；&lt;/li>
+&lt;li>&lt;strong>apps.py：&lt;/strong> 用于应用程序的配置（在新的Django版本中新增文件）；&lt;/li>
+&lt;li>&lt;strong>models.py：&lt;/strong> Django的模型文件，创建应用程序数据表模型（对应数据库的相关操作）；&lt;/li>
+&lt;li>&lt;strong>tests.py：&lt;/strong> 创建Django测试用例；&lt;/li>
+&lt;li>&lt;strong>views.py：&lt;/strong> Django的视图文件，控制向前段页面显示的内容。&lt;/li>
+&lt;/ul>
+&lt;h2 id="三编写第一个视图">三、编写第一个视图&lt;/h2>
+&lt;h3 id="1打开-signviewspy">1、打开 &lt;code>sign/views.py&lt;/code>&lt;/h3>
+&lt;p>把下面这些 Python 代码输入进去：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">from&lt;/span> &lt;span class="nn">django.http&lt;/span> &lt;span class="kn">import&lt;/span> &lt;span class="n">HttpResponse&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">def&lt;/span> &lt;span class="nf">index&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">request&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="n">HttpResponse&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s2">&amp;#34;Hello, world. You&amp;#39;re at the sign index.&amp;#34;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>这是 Django 中最简单的视图。如果想看见效果，我们需要将一个 URL 映射到它——这就是我们需要 URLconf 的原因了。&lt;/p>
+&lt;p>为了创建 URLconf，请在 sign目录里新建一个 &lt;code>urls.py&lt;/code> 文件。&lt;/p>
+&lt;h3 id="2在-sign目录里新建一个-urlspy-文件">2、在 sign目录里新建一个 &lt;code>urls.py&lt;/code> 文件&lt;/h3>
+&lt;p>输入如下代码：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">from&lt;/span> &lt;span class="nn">django.urls&lt;/span> &lt;span class="kn">import&lt;/span> &lt;span class="n">path&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">from&lt;/span> &lt;span class="nn">.&lt;/span> &lt;span class="kn">import&lt;/span> &lt;span class="n">views&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">urlpatterns&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">path&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">views&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">index&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">name&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s1">&amp;#39;index&amp;#39;&lt;/span>&lt;span class="p">),&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="3在根-urlconf-文件中指定创建的-signurls-模块">3、在根 URLconf 文件中指定创建的 &lt;code>sign.urls&lt;/code> 模块&lt;/h3>
+&lt;p>在 &lt;code>test_ops/urls.py&lt;/code> 文件的 &lt;code>urlpatterns&lt;/code> 列表里插入一个 &lt;code>include()&lt;/code>， 如下：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">from&lt;/span> &lt;span class="nn">django.contrib&lt;/span> &lt;span class="kn">import&lt;/span> &lt;span class="n">admin&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">from&lt;/span> &lt;span class="nn">django.urls&lt;/span> &lt;span class="kn">import&lt;/span> &lt;span class="n">path&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">include&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">urlpatterns&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">path&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;admin/&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">admin&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">site&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">urls&lt;/span>&lt;span class="p">),&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">path&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;sign/&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">include&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;sign.urls&amp;#39;&lt;/span>&lt;span class="p">)),&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>函数 &lt;a class="link" href="https://docs.djangoproject.com/zh-hans/3.0/ref/urls/#django.urls.include" target="_blank" rel="noopener"
+>&lt;code>include()&lt;/code>&lt;/a> 允许引用其它 URLconfs。每当 Django 遇到 &lt;a class="link" href="https://docs.djangoproject.com/zh-hans/3.0/ref/urls/#django.urls.include" target="_blank" rel="noopener"
+>&lt;code>include()&lt;/code>&lt;/a> 时，它会截断与此项匹配的 URL 的部分，并将剩余的字符串发送到 URLconf 以供进一步处理。&lt;/p>
+&lt;p>&lt;a class="link" href="https://docs.djangoproject.com/zh-hans/3.0/ref/urls/#django.urls.include" target="_blank" rel="noopener"
+>&lt;code>include()&lt;/code>&lt;/a> 的理念是使其可以即插即用。因为sign应用有它自己的 URLconf( &lt;code>sign/urls.py&lt;/code> )，他们能够被放在 &amp;ldquo;/sign/&amp;rdquo; ， &amp;ldquo;/fun_sign/&amp;rdquo; ，&amp;quot;/content/sign/&amp;quot;，或者其他任何路径下，这个应用都能够正常工作。&lt;/p>
+&lt;blockquote>
+&lt;p>当包括其它 URL 模式时你应该总是使用 &lt;code>include()&lt;/code> ， &lt;code>admin.site.urls&lt;/code> 是唯一例外。&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="四通过templates来展示页面">四、通过templates来展示页面&lt;/h2>
+&lt;h3 id="1在sign文件夹下面创建templates文件夹">1、在sign文件夹下面，创建&lt;code>templates&lt;/code>文件夹&lt;/h3>
+&lt;h3 id="2创建signhtml文件">2、创建sign.html文件&lt;/h3>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;span class="lnt">8
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-html" data-lang="html">&lt;span class="line">&lt;span class="cl">&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">html&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">head&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">title&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>Sign&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">title&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">head&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">body&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">h1&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>Hello Web!&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">h1&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">body&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">&amp;lt;/&lt;/span>&lt;span class="nt">html&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="3修改signurlspy文件">3、修改&lt;code>sign/urls.py&lt;/code>文件&lt;/h3>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">from&lt;/span> &lt;span class="nn">django.shortcuts&lt;/span> &lt;span class="kn">import&lt;/span> &lt;span class="n">render&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="k">def&lt;/span> &lt;span class="nf">sign&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">request&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1"># return HttpResponse(&amp;#34;Hello, world. You&amp;#39;re at the sign index.&amp;#34;)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="n">render&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">request&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;sign.html&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="4修改settingspy文件新增sign文字">4、修改&lt;code>settings.py&lt;/code>文件，新增&lt;code>'sign',&lt;/code>文字&lt;/h3>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="n">INSTALLED_APPS&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s1">&amp;#39;django.contrib.admin&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s1">&amp;#39;django.contrib.auth&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s1">&amp;#39;django.contrib.contenttypes&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s1">&amp;#39;django.contrib.sessions&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s1">&amp;#39;django.contrib.messages&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s1">&amp;#39;django.contrib.staticfiles&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1"># 你项目的 TEMPLATES 配置项描述了 Django 如何载入和渲染模板。&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1"># 默认的设置文件设置了 DjangoTemplates 后端，并将 APP_DIRS 设置成了 True。&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="c1"># 这一选项将会让 DjangoTemplates 在每个 INSTALLED_APPS 文件夹中寻找 &amp;#34;templates&amp;#34; 子目录。&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s1">&amp;#39;sign&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>你项目的 &lt;a class="link" href="https://docs.djangoproject.com/zh-hans/3.0/ref/settings/#std:setting-TEMPLATES" target="_blank" rel="noopener"
+>&lt;code>TEMPLATES&lt;/code>&lt;/a> 配置项描述了 Django 如何载入和渲染模板。默认的设置文件设置了 &lt;code>DjangoTemplates&lt;/code> 后端，并将 &lt;a class="link" href="https://docs.djangoproject.com/zh-hans/3.0/ref/settings/#std:setting-TEMPLATES-APP_DIRS" target="_blank" rel="noopener"
+>&lt;code>APP_DIRS&lt;/code>&lt;/a> 设置成了 True。这一选项将会让 &lt;code>DjangoTemplates&lt;/code> 在每个 &lt;a class="link" href="https://docs.djangoproject.com/zh-hans/3.0/ref/settings/#std:setting-INSTALLED_APPS" target="_blank" rel="noopener"
+>&lt;code>INSTALLED_APPS&lt;/code>&lt;/a> 文件夹中寻找 &amp;ldquo;templates&amp;rdquo; 子目录。这就是为什么尽管我们没有像在第二部分中那样修改 DIRS 设置，Django 也能正确找到 polls 的模板位置的原因。&lt;/p>
+&lt;p>输入网址：&lt;a class="link" href="http://127.0.0.1:8028/sign/" target="_blank" rel="noopener"
+>http://127.0.0.1:8028/sign/&lt;/a>&lt;/p>
+&lt;h2 id="五数据库配置">五、数据库配置&lt;/h2>
+&lt;p>Django 提供完善的模型（model）层主要用来创建和存取数据，不需要我们直接对数据库操作。&lt;/p>
+&lt;p>&lt;strong>Django模型的基础知识：&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>每个模型是一个Python类，继承&lt;strong>django.db.models.Model类&lt;/strong>&lt;/li>
+&lt;li>该模型的每个属性表示一个数据库表字段&lt;/li>
+&lt;li>所有这一切，已经给了你一个自动生成数据库访问的API&lt;/li>
+&lt;/ul>
+&lt;h3 id="1打开-test_opssettingspy-配置database">1、打开 &lt;code>test_ops/settings.py&lt;/code> ,配置Database&lt;/h3>
+&lt;p>这是个包含了 Django 项目设置的 Python 模块。通常，这个配置文件使用 SQLite 作为默认数据库。如果你不熟悉数据库，或者只是想尝试下 Django，这是最简单的选择。Python 内置 SQLite，所以你无需安装额外东西来使用它。当你开始一个真正的项目时，你可能更倾向使用一个更具扩展性的数据库，例如 PostgreSQL，避免中途切换数据库这个令人头疼的问题。&lt;/p>
+&lt;p>如果你想使用其他数据库，你需要安装合适的 &lt;a class="link" href="https://docs.djangoproject.com/zh-hans/3.0/topics/install/#database-installation" target="_blank" rel="noopener"
+>database bindings&lt;/a> ，然后改变设置文件中 &lt;a class="link" href="https://docs.djangoproject.com/zh-hans/3.0/ref/settings/#std:setting-DATABASES" target="_blank" rel="noopener"
+>&lt;code>DATABASES&lt;/code>&lt;/a> &lt;code>'default'&lt;/code> 项目中的一些键值：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://docs.djangoproject.com/zh-hans/3.0/ref/settings/#std:setting-DATABASE-ENGINE" target="_blank" rel="noopener"
+>&lt;code>ENGINE&lt;/code>&lt;/a> &amp;ndash; 可选值有 &lt;code>'django.db.backends.sqlite3'&lt;/code>，&lt;code>'django.db.backends.postgresql'&lt;/code>，&lt;code>'django.db.backends.mysql'&lt;/code>，或 &lt;code>'django.db.backends.oracle'&lt;/code>。其它 &lt;a class="link" href="https://docs.djangoproject.com/zh-hans/3.0/ref/databases/#third-party-notes" target="_blank" rel="noopener"
+>可用后端&lt;/a>。&lt;/li>
+&lt;li>&lt;a class="link" href="https://docs.djangoproject.com/zh-hans/3.0/ref/settings/#std:setting-NAME" target="_blank" rel="noopener"
+>&lt;code>NAME&lt;/code>&lt;/a> - 数据库的名称。如果使用的是 SQLite，数据库将是你电脑上的一个文件，在这种情况下， &lt;a class="link" href="https://docs.djangoproject.com/zh-hans/3.0/ref/settings/#std:setting-NAME" target="_blank" rel="noopener"
+>&lt;code>NAME&lt;/code>&lt;/a> 应该是此文件的绝对路径，包括文件名。默认值 &lt;code>os.path.join(BASE_DIR, 'db.sqlite3')&lt;/code> 将会把数据库文件储存在项目的根目录。&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;span class="lnt">8
+&lt;/span>&lt;span class="lnt">9
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># Database&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># https://docs.djangoproject.com/en/3.0/ref/settings/#databases&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">DATABASES&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s1">&amp;#39;default&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s1">&amp;#39;ENGINE&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="s1">&amp;#39;django.db.backends.sqlite3&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s1">&amp;#39;NAME&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span> &lt;span class="n">os&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">path&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">join&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">BASE_DIR&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;db.sqlite3&amp;#39;&lt;/span>&lt;span class="p">),&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="2打开-test_opssettingspy-配置installed_apps">2、打开 &lt;code>test_ops/settings.py&lt;/code> ,配置INSTALLED_APPS&lt;/h3>
+&lt;p>&lt;code>test_ops/settings.py&lt;/code>文件头部的 &lt;a class="link" href="https://docs.djangoproject.com/zh-hans/3.0/ref/settings/#std:setting-INSTALLED_APPS" target="_blank" rel="noopener"
+>&lt;code>INSTALLED_APPS&lt;/code>&lt;/a> 设置项。这里包括了会在你项目中启用的所有 Django 应用。应用能在多个项目中使用，你也可以打包并且发布应用，让别人使用它们。&lt;/p>
+&lt;p>通常， &lt;a class="link" href="https://docs.djangoproject.com/zh-hans/3.0/ref/settings/#std:setting-INSTALLED_APPS" target="_blank" rel="noopener"
+>&lt;code>INSTALLED_APPS&lt;/code>&lt;/a> 默认包括了以下 Django 的自带应用：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://docs.djangoproject.com/zh-hans/3.0/ref/contrib/admin/#module-django.contrib.admin" target="_blank" rel="noopener"
+>&lt;code>django.contrib.admin&lt;/code>&lt;/a> &amp;ndash; 管理员站点。&lt;/li>
+&lt;li>&lt;a class="link" href="https://docs.djangoproject.com/zh-hans/3.0/topics/auth/#module-django.contrib.auth" target="_blank" rel="noopener"
+>&lt;code>django.contrib.auth&lt;/code>&lt;/a> &amp;ndash; 认证授权系统。&lt;/li>
+&lt;li>&lt;a class="link" href="https://docs.djangoproject.com/zh-hans/3.0/ref/contrib/contenttypes/#module-django.contrib.contenttypes" target="_blank" rel="noopener"
+>&lt;code>django.contrib.contenttypes&lt;/code>&lt;/a> &amp;ndash; 内容类型框架。&lt;/li>
+&lt;li>&lt;a class="link" href="https://docs.djangoproject.com/zh-hans/3.0/topics/http/sessions/#module-django.contrib.sessions" target="_blank" rel="noopener"
+>&lt;code>django.contrib.sessions&lt;/code>&lt;/a> &amp;ndash; 会话框架。&lt;/li>
+&lt;li>&lt;a class="link" href="https://docs.djangoproject.com/zh-hans/3.0/ref/contrib/messages/#module-django.contrib.messages" target="_blank" rel="noopener"
+>&lt;code>django.contrib.messages&lt;/code>&lt;/a> &amp;ndash; 消息框架。&lt;/li>
+&lt;li>&lt;a class="link" href="https://docs.djangoproject.com/zh-hans/3.0/ref/contrib/staticfiles/#module-django.contrib.staticfiles" target="_blank" rel="noopener"
+>&lt;code>django.contrib.staticfiles&lt;/code>&lt;/a> &amp;ndash; 管理静态文件的框架。&lt;/li>
+&lt;/ul>
+&lt;p>这些应用被默认启用是为了给常规项目提供方便。&lt;/p>
+&lt;p>默认开启的某些应用需要至少一个数据表，所以，在使用他们之前需要在数据库中创建一些表。请执行以下命令：&lt;/p>
+&lt;p>&lt;code>...\&amp;gt; py manage.py migrate&lt;/code>&lt;/p>
+&lt;blockquote>
+&lt;p>就像之前说的，为了方便大多数项目，我们默认激活了一些应用，但并不是每个人都需要它们。如果你不需要某个或某些应用，你可以在运行 &lt;a class="link" href="https://docs.djangoproject.com/zh-hans/3.0/ref/django-admin/#django-admin-migrate" target="_blank" rel="noopener"
+>&lt;code>migrate&lt;/code>&lt;/a> 前毫无顾虑地从 &lt;a class="link" href="https://docs.djangoproject.com/zh-hans/3.0/ref/settings/#std:setting-INSTALLED_APPS" target="_blank" rel="noopener"
+>&lt;code>INSTALLED_APPS&lt;/code>&lt;/a> 里注释或者删除掉它们。 &lt;a class="link" href="https://docs.djangoproject.com/zh-hans/3.0/ref/django-admin/#django-admin-migrate" target="_blank" rel="noopener"
+>&lt;code>migrate&lt;/code>&lt;/a> 命令只会为在 &lt;a class="link" href="https://docs.djangoproject.com/zh-hans/3.0/ref/settings/#std:setting-INSTALLED_APPS" target="_blank" rel="noopener"
+>&lt;code>INSTALLED_APPS&lt;/code>&lt;/a> 里声明了的应用进行数据库迁移。&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="3创建模型">3、创建模型&lt;/h3>
+&lt;p>在sign/models.py文件中，新增&lt;/p>
+&lt;h3 id="4当模型创建好以后执行数据库迁移">4、当模型创建好以后，执行数据库迁移&lt;/h3>
+&lt;p>&lt;strong>使用如下命令进行数据库表的初始化和创建（迁移）：&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">运行 python manage.py makemigrations sign 为模型的改变生成迁移文件。
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">运行 python manage.py migrate 来应用数据库迁移。
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="六认证登录">六、认证登录&lt;/h2>
+&lt;h3 id="1创建admin系统用户">1、创建admin系统用户&lt;/h3>
+&lt;p>&lt;code>...\&amp;gt; python manage.py createsuperuser&lt;/code>&lt;/p>
+&lt;h3 id="2输入用户密码信息">2、输入用户、密码信息&lt;/h3>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">py manage.py createsuperuser
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sername (leave blank to use &amp;#39;edrain&amp;#39;): admin
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">mail address: admin@mail.com
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Password:
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">assword (again):
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">his password is too short. It must contain at least 8 characters.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">his password is too common.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">ypass password validation and create user anyway? [y/N]: y
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">uperuser created successfully.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="七开发模式">七、开发模式&lt;/h2>
+&lt;p>这段话在Django官方文档也曾出现过：鼓励松耦合以及对应用程序中不同部分的严格分割。&lt;/p>
+&lt;h3 id="1mvc开发模式">1、MVC开发模式&lt;/h3>
+&lt;p>MVC：Model-View-Controller&lt;/p>
+&lt;ul>
+&lt;li>model：数据存取层。&lt;/li>
+&lt;li>view：表现逻辑，代表的是系统中选择显示什么和怎么显示的部分。&lt;/li>
+&lt;li>controller：业务逻辑，代表系统中根据用户输入及需要访问模型，使用哪个视图的哪部分。&lt;/li>
+&lt;/ul>
+&lt;p>对应到Django后：&lt;/p>
+&lt;ul>
+&lt;li>Model：数据存取部分，由Django数据库层处理；&lt;/li>
+&lt;li>View：表现逻辑，选择显示哪些数据要显示以及怎样显示的部分，由Django的视图和模板处理；&lt;/li>
+&lt;li>Controller：业务逻辑，由Django根据URLconf设置，对给定URL调用适当的Python函数。&lt;/li>
+&lt;/ul>
+&lt;h3 id="2mtv开发模式">2、MTV开发模式&lt;/h3>
+&lt;p>由于Controller由框架自行处理，而Django里更关注的是模型（Model）、模板（Template）、视图（View），因此Django也被称为MTV框架。&lt;/p>
+&lt;p>MTV：Model-Template-Views&lt;/p>
+&lt;ul>
+&lt;li>Model：模型，数据存取层，该层处理与数据相关的所有事务，即如何存取、如果验证有效等；&lt;/li>
+&lt;li>Template：模板，表现层，该层处理与表现相关的所有事务，即如何在页面或者其他类型文档中进行显示；&lt;/li>
+&lt;li>View：视图，业务逻辑层，该层包含存取模型及调取恰当模板的相关逻辑，可以看作是模型和模板之间的桥梁。&lt;/li>
+&lt;/ul>
+&lt;h2 id="八小技巧">八、小技巧&lt;/h2>
+&lt;h3 id="1去除模板中的硬编码-url">1、去除模板中的硬编码 URL&lt;/h3>
+&lt;p>1）修改&lt;code>sign/templates/sign/sign_in.html&lt;/code>文件&lt;/p>
+&lt;p>当发送登录请求时，链接是硬编码的：&lt;/p>
+&lt;p>&lt;code>&amp;lt;form action=&amp;quot;/login_action/&amp;quot; method=&amp;quot;post&amp;quot;&amp;gt;&lt;/code>&lt;/p>
+&lt;p>问题在于，硬编码和强耦合的链接，对于一个包含很多应用的项目来说，修改起来是十分困难的。然而，因为你在 &lt;code>sign.urls&lt;/code> 的 &lt;a class="link" href="https://docs.djangoproject.com/zh-hans/3.0/ref/urls/#django.conf.urls.url" target="_blank" rel="noopener"
+>&lt;code>url()&lt;/code>&lt;/a> 函数中通过 name 参数为 URL 定义了名字，你可以使用 &lt;code>{% url %}&lt;/code> 标签代替它。&lt;/p>
+&lt;p>替代如下：&lt;/p>
+&lt;p>&lt;code>&amp;lt;form action=&amp;quot;{% url 'login_action' %}&amp;quot; method=&amp;quot;post&amp;quot;&amp;gt;&lt;/code>&lt;/p>
+&lt;p>这个标签的工作方式是在 &lt;code>sign.urls&lt;/code> 模块的 URL 定义中寻具有指定名字的条目。你可以回忆一下，具有名字 &amp;rsquo;login_action&amp;rsquo; 的 URL 是在如下语句中定义的。&lt;/p>
+&lt;p>2）修改&lt;code>sign/urls.py&lt;/code>文件，新增&lt;code>name='login_action'&lt;/code>&lt;/p>
+&lt;p>&lt;code>path('login_action/', views.login_action, name='login_action'), # name的值可以在html中关联{% url 'xxx' %} template tag&lt;/code>&lt;/p>
+&lt;p>如果你想改变登录视图的 URL，比如想改成 sign/edrain/login_action/ ，你不用在模板里修改任何东西（包括其它模板），只要在&lt;code>sign/urls.py&lt;/code> 里稍微修改一下就行。&lt;/p>
+&lt;p>修改如下：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl"># added the word &amp;#39;edrain&amp;#39;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">path(&amp;#39;edrain/login_action/&amp;#39;, views.login_action, name=&amp;#39;login_action&amp;#39;),
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="2为-url-名称添加命名空间">2、为 URL 名称添加命名空间&lt;/h3>
+&lt;p>Django 如何知道 &lt;code>{% url %}&lt;/code> 标签到底对应哪一个应用的 URL 呢？&lt;/p>
+&lt;p>1）在根 URLconf 中添加命名空间。在 &lt;code>sign/urls.py&lt;/code> 文件中稍作修改，加上 &lt;code>app_name&lt;/code> 设置命名空间：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;span class="lnt">8
+&lt;/span>&lt;span class="lnt">9
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="kn">from&lt;/span> &lt;span class="nn">django.urls&lt;/span> &lt;span class="kn">import&lt;/span> &lt;span class="n">path&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kn">from&lt;/span> &lt;span class="nn">.&lt;/span> &lt;span class="kn">import&lt;/span> &lt;span class="n">views&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">app_name&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="s1">&amp;#39;sign&amp;#39;&lt;/span> &lt;span class="c1"># 设置命名空间&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">urlpatterns&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">[&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">path&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">views&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">sign&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">name&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s1">&amp;#39;sign&amp;#39;&lt;/span>&lt;span class="p">),&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">path&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;login_action/&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">views&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">login_action&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">name&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s1">&amp;#39;login_action&amp;#39;&lt;/span>&lt;span class="p">),&lt;/span> &lt;span class="c1"># name的值可以在html中关联{% url &amp;#39;xxx&amp;#39; %} template tag&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>2）修改sign/templates/sign/sign_in.html文件,&lt;/p>
+&lt;p>从&lt;code>&amp;lt;form action=&amp;quot;{% url 'login_action' %}&amp;quot; method=&amp;quot;post&amp;quot;&amp;gt;&lt;/code>&lt;/p>
+&lt;p>修改为指向具有命名空间的详细视图，变更为：&lt;/p>
+&lt;p>&lt;code>&amp;lt;form action=&amp;quot;{% url 'sign:login_action' %}&amp;quot; method=&amp;quot;post&amp;quot;&amp;gt;&lt;/code>&lt;/p>
+&lt;h3 id="3httpreponsedirect使用软编码链接">3、HttpReponseDirect使用软编码链接&lt;/h3>
+&lt;p>硬编码链接：可以通过使用HttpResponseRedirect(&amp;rsquo;/index/?page=2&amp;rsquo;)直接获取第2页的文章列表&lt;/p>
+&lt;p>HttpReponseDirect只支持hard coded urls(硬编码链接), 不能直接使用命名的URL，如使用HttpResponseDirect(&amp;lsquo;blog:article_list‘)是错误的。&lt;/p>
+&lt;p>在使用URL命名时，我们需要先通过URL反向解析方法reverse先对命名URL(article_list)进行解析，然后再使用HttpReponseRedirect定向(如下面的代码)。背后的逻辑是reverse(&amp;lsquo;blog:article_list&amp;rsquo;)=&amp;rsquo;/index/&amp;rsquo;。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-python" data-lang="python">&lt;span class="line">&lt;span class="cl">&lt;span class="k">def&lt;/span> &lt;span class="nf">login_action&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">request&lt;/span>&lt;span class="p">):&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="s2">&amp;#34;&amp;#34;&amp;#34;执行 登录按钮 操作后的界面&amp;#34;&amp;#34;&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="n">request&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">method&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="s1">&amp;#39;POST&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">username&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">request&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">POST&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">get&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;username&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="c1"># 此处对应表单的form中的input的 name属性&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">password&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="n">request&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">POST&lt;/span>&lt;span class="o">.&lt;/span>&lt;span class="n">get&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;password&amp;#39;&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="s1">&amp;#39;&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="n">username&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="s1">&amp;#39;qwer&amp;#39;&lt;/span> &lt;span class="ow">and&lt;/span> &lt;span class="n">password&lt;/span> &lt;span class="o">==&lt;/span> &lt;span class="s1">&amp;#39;qwer&amp;#39;&lt;/span>&lt;span class="p">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="n">HttpResponseRedirect&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">reverse&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;sign:home&amp;#39;&lt;/span>&lt;span class="p">))&lt;/span> &lt;span class="c1"># 对路径重定向，成功登陆之后重新指向 /sign/home/ 页面&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>链接：https://blog.csdn.net/weixin_42134789/article/details/81505963&lt;/p>
+&lt;h2 id="九疑问">九、疑问&lt;/h2>
+&lt;h3 id="q1dbsqlite3是什么">Q1：db.sqlite3是什么？&lt;/h3>
+&lt;p>A1：链接：&lt;a class="link" href="https://www.runoob.com/sqlite/sqlite-intro.html" target="_blank" rel="noopener"
+>https://www.runoob.com/sqlite/sqlite-intro.html&lt;/a>&lt;/p>
+&lt;p>SQLite是一个进程内的库，实现了自给自足的、无服务器的、零配置的、事务性的 SQL 数据库引擎。它是一个零配置的数据库，这意味着与其他数据库一样，您不需要在系统中配置。就像其他数据库，SQLite 引擎不是一个独立的进程，可以按应用程序需求进行静态或动态连接。SQLite 直接访问其存储文件。&lt;/p>
+&lt;h3 id="q2项目和应用区别">Q2:项目和应用区别？&lt;/h3>
+&lt;p>A2：链接：&lt;a class="link" href="https://docs.djangoproject.com/zh-hans/3.0/intro/tutorial01/" target="_blank" rel="noopener"
+>https://docs.djangoproject.com/zh-hans/3.0/intro/tutorial01/&lt;/a>&lt;/p>
+&lt;p>应用程序是执行某项操作的Web应用程序，例如Weblog系统，公共记录数据库或小型民意调查应用程序。&lt;/p>
+&lt;p>项目是特定网站的配置和应用程序的集合。一个项目可以包含多个应用程序。一个应用程序可以在多个项目中。&lt;/p>
+&lt;h3 id="q3pycharm提示unresolved-attribute-reference-objects-for-class-usermodel">Q3：Pycharm提示“Unresolved attribute reference &amp;lsquo;objects&amp;rsquo; for class &amp;lsquo;UserModel&amp;rsquo;”&lt;/h3>
+&lt;p>A3：You need to enable Django support. Go to&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>PyCharm -&amp;gt; Preferences -&amp;gt; Languages &amp;amp; Frameworks -&amp;gt; Django&lt;/strong>&lt;/p>
+&lt;/blockquote>
+&lt;p>and then check &lt;em>Enable Django Support&lt;/em>&lt;/p>
+&lt;h3 id="q4use_tz时区问题">Q4：USE_TZ时区问题&lt;/h3>
+&lt;blockquote>
+&lt;p>&lt;strong>datetime.datetime.now()、datetime.datetime.utcnow()与django.util.timezone.now()的区别&lt;/strong>&lt;/p>
+&lt;/blockquote>
+&lt;p>datetime.datetime.now()：
+输出的永远是本地时间（naive time）与配置无任任何关系。&lt;/p>
+&lt;p>datetime.datetime.utcnow()：
+如果setting中配置USE_TZ=True则输出的是UTC时间（naive time）;如果setting中配置USE_TZ=False，则该输出时间与datetime.datetime.now()完全相同。&lt;/p>
+&lt;p>django.util.timezone.now()：
+如果setting中配置USE_TZ=True则输出的是UTC时间（active time），如果配置USE_TZ=False，则与datetime.datetime.now()完全相同。&lt;/p></description></item></channel></rss>
