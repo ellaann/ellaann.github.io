@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Edrain’s Blog</title><link>https://example.com/</link><description>Recent content on Edrain’s Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 13 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/index.xml" rel="self" type="application/rss+xml"/><item><title>Hugo + GitHub Actions实现在GitHub Pages自动部署</title><link>https://example.com/p/hugo--github-actions%E5%AE%9E%E7%8E%B0%E5%9C%A8github-pages%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/</link><pubDate>Mon, 13 Feb 2023 00:00:00 +0000</pubDate><guid>https://example.com/p/hugo--github-actions%E5%AE%9E%E7%8E%B0%E5%9C%A8github-pages%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/</guid><description>&lt;h2 id="手动步骤">手动步骤&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Edrain’s Blog</title><link>https://example.com/</link><description>Recent content on Edrain’s Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 13 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/index.xml" rel="self" type="application/rss+xml"/><item><title>Hugo + GitHub Actions实现GitHub Pages的自动部署</title><link>https://example.com/p/hugo--github-actions%E5%AE%9E%E7%8E%B0github-pages%E7%9A%84%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/</link><pubDate>Mon, 13 Feb 2023 00:00:00 +0000</pubDate><guid>https://example.com/p/hugo--github-actions%E5%AE%9E%E7%8E%B0github-pages%E7%9A%84%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/</guid><description>&lt;h2 id="手动步骤">手动步骤&lt;/h2>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
@@ -121,20 +121,20 @@
 &lt;/ul>
 &lt;h3 id="实现效果">实现效果&lt;/h3>
 &lt;p>当执行git push origin master后，GitHub Actions会开启自动构建部署，至此整个设置过程完毕。
-&lt;img src="https://example.com/p/hugo--github-actions%E5%AE%9E%E7%8E%B0%E5%9C%A8github-pages%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/20230213155750.png"
+&lt;img src="https://example.com/p/hugo--github-actions%E5%AE%9E%E7%8E%B0github-pages%E7%9A%84%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/20230213155750.png"
 width="2510"
 height="712"
-srcset="https://example.com/p/hugo--github-actions%E5%AE%9E%E7%8E%B0%E5%9C%A8github-pages%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/20230213155750_huce286058fed023e2d9bc3b217600b681_95603_480x0_resize_box_3.png 480w, https://example.com/p/hugo--github-actions%E5%AE%9E%E7%8E%B0%E5%9C%A8github-pages%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/20230213155750_huce286058fed023e2d9bc3b217600b681_95603_1024x0_resize_box_3.png 1024w"
+srcset="https://example.com/p/hugo--github-actions%E5%AE%9E%E7%8E%B0github-pages%E7%9A%84%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/20230213155750_huce286058fed023e2d9bc3b217600b681_95603_480x0_resize_box_3.png 480w, https://example.com/p/hugo--github-actions%E5%AE%9E%E7%8E%B0github-pages%E7%9A%84%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/20230213155750_huce286058fed023e2d9bc3b217600b681_95603_1024x0_resize_box_3.png 1024w"
 loading="lazy"
 alt="workflows 效果"
 class="gallery-image"
 data-flex-grow="352"
 data-flex-basis="846px"
 >
-&lt;img src="https://example.com/p/hugo--github-actions%E5%AE%9E%E7%8E%B0%E5%9C%A8github-pages%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/20230213155831.png"
+&lt;img src="https://example.com/p/hugo--github-actions%E5%AE%9E%E7%8E%B0github-pages%E7%9A%84%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/20230213155831.png"
 width="2514"
 height="686"
-srcset="https://example.com/p/hugo--github-actions%E5%AE%9E%E7%8E%B0%E5%9C%A8github-pages%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/20230213155831_hu5b4c883903df7d2628c2e3b817aa6a47_94506_480x0_resize_box_3.png 480w, https://example.com/p/hugo--github-actions%E5%AE%9E%E7%8E%B0%E5%9C%A8github-pages%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/20230213155831_hu5b4c883903df7d2628c2e3b817aa6a47_94506_1024x0_resize_box_3.png 1024w"
+srcset="https://example.com/p/hugo--github-actions%E5%AE%9E%E7%8E%B0github-pages%E7%9A%84%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/20230213155831_hu5b4c883903df7d2628c2e3b817aa6a47_94506_480x0_resize_box_3.png 480w, https://example.com/p/hugo--github-actions%E5%AE%9E%E7%8E%B0github-pages%E7%9A%84%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/20230213155831_hu5b4c883903df7d2628c2e3b817aa6a47_94506_1024x0_resize_box_3.png 1024w"
 loading="lazy"
 alt="comments 效果"
 class="gallery-image"
