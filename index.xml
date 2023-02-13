@@ -579,7 +579,103 @@ alt="image"
 &lt;p>datetime.datetime.utcnow()：
 如果setting中配置USE_TZ=True则输出的是UTC时间（naive time）;如果setting中配置USE_TZ=False，则该输出时间与datetime.datetime.now()完全相同。&lt;/p>
 &lt;p>django.util.timezone.now()：
-如果setting中配置USE_TZ=True则输出的是UTC时间（active time），如果配置USE_TZ=False，则与datetime.datetime.now()完全相同。&lt;/p></description></item><item><title>Archives</title><link>https://example.com/archives/</link><pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate><guid>https://example.com/archives/</guid><description/></item><item><title>About</title><link>https://example.com/about/</link><pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate><guid>https://example.com/about/</guid><description>&lt;h2 id="-站主是谁">🍭 站主是谁？&lt;/h2>
+如果setting中配置USE_TZ=True则输出的是UTC时间（active time），如果配置USE_TZ=False，则与datetime.datetime.now()完全相同。&lt;/p></description></item><item><title>Archives</title><link>https://example.com/archives/</link><pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate><guid>https://example.com/archives/</guid><description/></item><item><title>SQL Sync TOOL</title><link>https://example.com/p/sql-sync-tool/</link><pubDate>Tue, 07 May 2019 23:51:50 +0800</pubDate><guid>https://example.com/p/sql-sync-tool/</guid><description>&lt;p>&lt;a class="link" href="https://github.com/ellaann/sql-synchronize" target="_blank" rel="noopener"
+>源码地址&lt;/a>&lt;/p>
+&lt;h2 id="1功能">1、功能&lt;/h2>
+&lt;p>这是一个多环境时，SQL同步小工具。为了保证各个测试环境的稳定性，解决执行同一条SQL语句时，需要到各个测试环境都执行的琐碎操作。
+&lt;img src="https://camo.githubusercontent.com/2fe5f5d1dc9654368421b033cab1a62d5f37b36937c95aee34a4856606abe8fb/68747470733a2f2f75706c6f61642d696d616765732e6a69616e7368752e696f2f75706c6f61645f696d616765732f313638333035302d316565623865636333613332376135652e706e673f696d6167654d6f6772322f6175746f2d6f7269656e742f7374726970253743696d61676556696577322f322f772f31323430"
+loading="lazy"
+alt="执行完成"
+>&lt;/p>
+&lt;h2 id="2文件路径">2、文件路径&lt;/h2>
+&lt;ul>
+&lt;li>connect_db.py：连接MySQL数据库&lt;/li>
+&lt;li>get_config.py: 通过本地的配置文件，连接服务器，拉取服务器的配置文件&lt;/li>
+&lt;li>graphic_display.py: 执行同步各环境的SQL的GUI&lt;/li>
+&lt;li>server_info: 本地的配置文件，需要通过此文件连接服务器。&lt;/li>
+&lt;li>iniconfig.ini: 从服务器拉取的配置文件。&lt;/li>
+&lt;li>sql执行记录：通过该小应用执行的SQL记录。&lt;/li>
+&lt;li>output文件夹：打包的.exe文件&lt;/li>
+&lt;/ul>
+&lt;h2 id="3需要模块">3、需要模块&lt;/h2>
+&lt;p>执行：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">python -m pip install -r requirements.txt
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">paramiko tkinter pymysql auto-py-to-exe
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="4用到知识">4、用到知识&lt;/h2>
+&lt;p>1）
+参考链接：https://www.jianshu.com/p/95b6a4c1b637
+paramiko是用python语言写的一个模块，遵循SSH2协议，支持以加密和认证的方式，用于做远程控制，使用该模块可以对远程服务器进行命令或文件操作。
+fabric和ansible内部的远程管理就是使用的paramiko来现实。&lt;/p>
+&lt;p>2）
+参考链接：https://www.cnblogs.com/shwee/p/9427975.html
+Tkinter 是使用 python 进行窗口视窗设计的模块。
+Tkinter模块(&amp;ldquo;Tk 接口&amp;rdquo;)是Python的标准Tk GUI工具包的接口。
+作为 python 特定的GUI界面，是一个图像的窗口，tkinter是python 自带的，可以编辑的GUI界面，我们可以用GUI 实现很多直观的功能。Tkinter支持16个核心的窗口部件，这个16个核心窗口部件类简要描述如下：&lt;/p>
+&lt;ul>
+&lt;li>Button：一个简单的按钮，用来执行一个命令或别的操作。&lt;/li>
+&lt;li>Canvas：组织图形。这个部件可以用来绘制图表和图，创建图形编辑器，实现定制窗口部件。&lt;/li>
+&lt;li>Checkbutton：代表一个变量，它有两个不同的值。点击这个按钮将会在这两个值间切换。&lt;/li>
+&lt;li>Entry：文本输入域。&lt;/li>
+&lt;li>Frame：一个容器窗口部件。帧可以有边框和背景，当创建一个应用程序&lt;/li>
+&lt;li>dialog(对话）版面时，被用来组织其它的窗口部件。&lt;/li>
+&lt;li>Label：显示一个文本或图象。&lt;/li>
+&lt;li>Listbox：显示供选方案的一个列表。&lt;/li>
+&lt;li>listbox能够被配置来得到radiobutton或checklist的行为。&lt;/li>
+&lt;li>Menu：菜单条。用来实现下拉和弹出式菜单。&lt;/li>
+&lt;li>Menubutton：菜单按钮。用来实现下拉式菜单。&lt;/li>
+&lt;li>Message：显示一文本。类似label窗口部件，但是能够自动地调整文本到给定的宽度或比率。&lt;/li>
+&lt;li>Radiobutton：代表一个变量，它可以有多个值中的一个。点击它将为这个变量设置值，并且清除与这同一变量相关的其它radiobutton。&lt;/li>
+&lt;li>Scale：允许你通过滑块来设置一数字值。&lt;/li>
+&lt;li>Scrollbar：为配合使用canvas, entry, listbox, and text窗口部件的标准滚动条。&lt;/li>
+&lt;li>Text：格式化文本显示。允许你用不同的样式和属性来显示和编辑文本。同时支持内嵌图象和窗口。&lt;/li>
+&lt;li>Toplevel：一个容器窗口部件，作为一个单独的、最上面的窗口显示。&lt;/li>
+&lt;li>messageBox：消息框，用于显示你应用程序的消息框。(Python2中为tkMessagebox)
+注意在Tkinter中窗口部件类没有分级；所有的窗口部件类在树中都是兄弟关系。&lt;/li>
+&lt;/ul>
+&lt;p>3）参考连接：https://github.com/brentvollebregt/auto-py-to-exe
+下载auto-py-to-exe库，可以将.py文件转换成.exe文件。界面上其实是通过各种按钮来添加一些指令，这些指令完全是基于pyinstaller的。
+通过在命令行执行&lt;code>auto-py-to-exe&lt;/code>启动界面，如下图
+&lt;img src="https://camo.githubusercontent.com/2fb07839209ee42516c25ada8a7ef8e3744c41edaafc820a294bbdba92ccef66/68747470733a2f2f75706c6f61642d696d616765732e6a69616e7368752e696f2f75706c6f61645f696d616765732f313638333035302d373037653633633537663762303531332e706e673f696d6167654d6f6772322f6175746f2d6f7269656e742f7374726970253743696d61676556696577322f322f772f31323430"
+loading="lazy"
+alt="Auto Py to Exe"
+>&lt;/p>
+&lt;p>4)参考连接：https://zhuanlan.zhihu.com/p/57839415
+使用pipreqs生成requirements.txt&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">pipreqs ./ --encoding=utf-8 --force
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="5出现问题">5、出现问题：&lt;/h2>
+&lt;p>Q1、paramiko使用出现 &lt;code>CryptographyDeprecationWarning: encode_point has been deprecated on EllipticCurvePublicNumbers and will be removed in a future version.&lt;/code>&lt;/p>
+&lt;p>A1:
+python交互式环境下测试:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">import cryptography # 没有问题，可以正常导入
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">help(cryptography) # 查看版本是2.6.1
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">pip install cryptography==2.4.2 # 本机执行
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item><item><title>About</title><link>https://example.com/about/</link><pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate><guid>https://example.com/about/</guid><description>&lt;h2 id="-站主是谁">🍭 站主是谁？&lt;/h2>
 &lt;ul>
 &lt;li>又菜又爱玩&lt;/li>
 &lt;li>网球1.0&lt;/li>
