@@ -1,4 +1,147 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hugo on Edrain’s Blog</title><link>https://example.com/categories/hugo/</link><description>Recent content in Hugo on Edrain’s Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 03 Mar 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/categories/hugo/index.xml" rel="self" type="application/rss+xml"/><item><title>添加Favicon到Hugo的网站中</title><link>https://example.com/p/%E6%B7%BB%E5%8A%A0favicon%E5%88%B0hugo%E7%9A%84%E7%BD%91%E7%AB%99%E4%B8%AD/</link><pubDate>Sat, 03 Mar 2018 00:00:00 +0000</pubDate><guid>https://example.com/p/%E6%B7%BB%E5%8A%A0favicon%E5%88%B0hugo%E7%9A%84%E7%BD%91%E7%AB%99%E4%B8%AD/</guid><description>&lt;h2 id="什么是favicon">什么是favicon&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hugo on Edrain’s Blog</title><link>https://example.com/categories/hugo/</link><description>Recent content in Hugo on Edrain’s Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 13 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/categories/hugo/index.xml" rel="self" type="application/rss+xml"/><item><title>Hugo + GitHub Actions实现在GitHub Pages自动部署</title><link>https://example.com/p/hugo--github-actions%E5%AE%9E%E7%8E%B0%E5%9C%A8github-pages%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/</link><pubDate>Mon, 13 Feb 2023 00:00:00 +0000</pubDate><guid>https://example.com/p/hugo--github-actions%E5%AE%9E%E7%8E%B0%E5%9C%A8github-pages%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/</guid><description>&lt;h2 id="手动步骤">手动步骤&lt;/h2>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl"># 利用hugo命令创建对应的博客markdown文件
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">hugo new post/hugo/index.md
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"># 利用下述命令开启hugo博客的动态监听展示，并进行编写
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">hugo server -w -D
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"># 执行下述命令提交到source code master分支
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git add -A
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git commit -a -m &amp;#34;xxxx&amp;#34;
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git push origin master
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"># 准备public
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">hugo
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"># 提交修改到public repo master分支
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">...
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>上面的手动步骤是发布的必要指令，但是感觉每次都敲，实在没多大必要。正巧上个项目用上了Github Actions，所以想着用工具去实现自动化部署。&lt;/p>
+&lt;h2 id="github-actions-配置步骤">Github Actions 配置步骤&lt;/h2>
+&lt;h3 id="创建workflows文件">创建workflows文件&lt;/h3>
+&lt;p>在博客源码地址创建文件: &lt;code>.github/workflows/blog-depoly.yml&lt;/code>&lt;/p>
+&lt;p>必须修改&lt;code>EXTERNAL_REPOSITORY&lt;/code>字段，变成自己的repo name；
+具体字段，可按需修改。&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;span class="lnt">26
+&lt;/span>&lt;span class="lnt">27
+&lt;/span>&lt;span class="lnt">28
+&lt;/span>&lt;span class="lnt">29
+&lt;/span>&lt;span class="lnt">30
+&lt;/span>&lt;span class="lnt">31
+&lt;/span>&lt;span class="lnt">32
+&lt;/span>&lt;span class="lnt">33
+&lt;/span>&lt;span class="lnt">34
+&lt;/span>&lt;span class="lnt">35
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-yaml" data-lang="yaml">&lt;span class="line">&lt;span class="cl">&lt;span class="nt">name&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">github pages&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">on&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">push&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">branches&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="l">main &lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="c"># Set a branch to deploy&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">pull_request&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nt">jobs&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">deploy&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">runs-on&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">ubuntu-20.04&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">steps&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="nt">uses&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">actions/checkout@v3&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">with&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">submodules&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kc">true&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="c"># Fetch Hugo themes (true OR recursive)&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">fetch-depth&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="m">0&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="c"># Fetch all history for .GitInfo and .Lastmod&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="nt">name&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">Setup Hugo&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">uses&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">peaceiris/actions-hugo@v2&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">with&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">hugo-version&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="s1">&amp;#39;0.110.0&amp;#39;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">extended&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="kc">true&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="nt">name&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">Build&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">run&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">hugo --minify&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="nt">name&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">Deploy&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">uses&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">peaceiris/actions-gh-pages@v3&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">if&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">github.ref == &amp;#39;refs/heads/main&amp;#39;&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">with&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">PERSONAL_TOKEN&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">${{ secrets.PERSONAL_TOKEN }}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">EXTERNAL_REPOSITORY&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">ellaann/ellaann.github.io&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">PUBLISH_BRANCH&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">main&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">PUBLISH_DIR&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">./public&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">commit_message&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">${{ github.event.head_commit.message }}&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="创建和配置personal_token">创建和配置PERSONAL_TOKEN&lt;/h3>
+&lt;ul>
+&lt;li>在个人GitHub页面，依次点击Settings-&amp;gt;Developer settings-&amp;gt;Personal access tokens进入页面。（参考路径地址：https://github.com/settings/tokens ）&lt;/li>
+&lt;li>点击Generate new token，在Note中输入名称，在Select scopes选择workflow。&lt;/li>
+&lt;li>将生成的token复制出来为后续创建secret做准备，注意必须及时复制，一旦离开此页面后续就无法查看其值，只能重新创建新token。&lt;/li>
+&lt;li>进入对应的GitHub项目下，依次点击Settings-&amp;gt;Secrets-&amp;gt;Actions进入添加Action secrets的界面，点击New repository secret按钮。（参考路径地址：https://github.com/ellaann/ed-blog/settings/secrets/actions）&lt;/li>
+&lt;li>在出现的界面中name部分输入我们设置的值（&lt;code>PERSONAL_TOKEN&lt;/code>），Secret部分输入刚保存的token值，然后点击Add secret按钮&lt;/li>
+&lt;/ul>
+&lt;h3 id="实现效果">实现效果&lt;/h3>
+&lt;p>当执行git push origin master后，GitHub Actions会开启自动构建部署，至此整个设置过程完毕。
+&lt;img src="https://example.com/p/hugo--github-actions%E5%AE%9E%E7%8E%B0%E5%9C%A8github-pages%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/20230213155750.png"
+width="2510"
+height="712"
+srcset="https://example.com/p/hugo--github-actions%E5%AE%9E%E7%8E%B0%E5%9C%A8github-pages%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/20230213155750_huce286058fed023e2d9bc3b217600b681_95603_480x0_resize_box_3.png 480w, https://example.com/p/hugo--github-actions%E5%AE%9E%E7%8E%B0%E5%9C%A8github-pages%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/20230213155750_huce286058fed023e2d9bc3b217600b681_95603_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+alt="workflows 效果"
+class="gallery-image"
+data-flex-grow="352"
+data-flex-basis="846px"
+>
+&lt;img src="https://example.com/p/hugo--github-actions%E5%AE%9E%E7%8E%B0%E5%9C%A8github-pages%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/20230213155831.png"
+width="2514"
+height="686"
+srcset="https://example.com/p/hugo--github-actions%E5%AE%9E%E7%8E%B0%E5%9C%A8github-pages%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/20230213155831_hu5b4c883903df7d2628c2e3b817aa6a47_94506_480x0_resize_box_3.png 480w, https://example.com/p/hugo--github-actions%E5%AE%9E%E7%8E%B0%E5%9C%A8github-pages%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/20230213155831_hu5b4c883903df7d2628c2e3b817aa6a47_94506_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+alt="comments 效果"
+class="gallery-image"
+data-flex-grow="366"
+data-flex-basis="879px"
+>
+希望大家都能成功~&lt;/p></description></item><item><title>添加Favicon到Hugo的网站中</title><link>https://example.com/p/%E6%B7%BB%E5%8A%A0favicon%E5%88%B0hugo%E7%9A%84%E7%BD%91%E7%AB%99%E4%B8%AD/</link><pubDate>Sat, 03 Mar 2018 00:00:00 +0000</pubDate><guid>https://example.com/p/%E6%B7%BB%E5%8A%A0favicon%E5%88%B0hugo%E7%9A%84%E7%BD%91%E7%AB%99%E4%B8%AD/</guid><description>&lt;h2 id="什么是favicon">什么是favicon&lt;/h2>
 &lt;p>favicon，是单词“favorite icon”的缩写，是一个帮助用户在视觉上识别和区分您的网站的小图标。 其主要目的是帮助访问者在打开多个选项卡、书签、快捷方式和地址栏时更轻松地找到您的页面。&lt;/p>
 &lt;h2 id="转换地址">转换地址&lt;/h2>
 &lt;p>有这么多的平台、设备、图标格式和尺寸，很难确切地知道你应该怎么做才能在任何地方始终如一地展示你的网站图标/品牌。 这就是为什么有多个图标生成器可用的原因。 只需快速搜索“favicon generator”，就会显示一长串网站，这些网站可帮助创建支持各种平台和设备的 favicon。&lt;/p>
