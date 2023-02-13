@@ -1,65 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Edrain’s Blog</title><link>https://example.com/</link><description>Recent content on Edrain’s Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 03 Feb 2023 23:51:50 +0800</lastBuildDate><atom:link href="https://example.com/index.xml" rel="self" type="application/rss+xml"/><item><title>常用Hugo指令</title><link>https://example.com/p/%E5%B8%B8%E7%94%A8hugo%E6%8C%87%E4%BB%A4/</link><pubDate>Fri, 03 Feb 2023 23:51:50 +0800</pubDate><guid>https://example.com/p/%E5%B8%B8%E7%94%A8hugo%E6%8C%87%E4%BB%A4/</guid><description>&lt;h2 id="新建一个-hugo-网站">新建一个 Hugo 网站。&lt;/h2>
-&lt;ol>
-&lt;li>进入你想存放 Hugo 网站文件夹的目录。如果你想放在 &lt;code>Documents&lt;/code> 目录下，在终端里执行 &lt;code>cd ~/Documents&lt;/code> 即可。&lt;/li>
-&lt;li>执行以下命令新建一个 Hugo 网站。&lt;code>hugo new site myblog&lt;/code> # &amp;ldquo;myblog&amp;rdquo; 是我的网站文件夹名。&lt;/li>
-&lt;li>选择主题clone到本地&lt;/li>
-&lt;/ol>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">cd ~/myblog # 进入网站目录，用你的网站目录名替换 &amp;#34;myblog&amp;#34;。
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git clone https://github.com/CaiJimmy/hugo-theme-stack/ themes/hugo-theme-stack
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;h2 id="启动hugo">启动Hugo&lt;/h2>
-&lt;p>&lt;code>hugo server -D&lt;/code>
-使用浏览器打开 http://localhost:1313 预览。&lt;/p>
-&lt;h2 id="构建-hugo-网站">构建 Hugo 网站&lt;/h2>
-&lt;p>在 Hugo 网站文件夹的根目录下，执行 hugo 命令来构建。
-&lt;code>hugo # 构建你的 Hugo 网站，默认将静态站点保存到 &amp;quot;public&amp;quot; 目录。&lt;/code>&lt;/p></description></item><item><title>添加Favicon到Hugo的网站中</title><link>https://example.com/p/%E6%B7%BB%E5%8A%A0favicon%E5%88%B0hugo%E7%9A%84%E7%BD%91%E7%AB%99%E4%B8%AD/</link><pubDate>Fri, 03 Feb 2023 23:51:50 +0800</pubDate><guid>https://example.com/p/%E6%B7%BB%E5%8A%A0favicon%E5%88%B0hugo%E7%9A%84%E7%BD%91%E7%AB%99%E4%B8%AD/</guid><description>&lt;h2 id="什么是favicon">什么是favicon&lt;/h2>
-&lt;p>favicon，是单词“favorite icon”的缩写，是一个帮助用户在视觉上识别和区分您的网站的小图标。 其主要目的是帮助访问者在打开多个选项卡、书签、快捷方式和地址栏时更轻松地找到您的页面。&lt;/p>
-&lt;h2 id="转换地址">转换地址&lt;/h2>
-&lt;p>有这么多的平台、设备、图标格式和尺寸，很难确切地知道你应该怎么做才能在任何地方始终如一地展示你的网站图标/品牌。 这就是为什么有多个图标生成器可用的原因。 只需快速搜索“favicon generator”，就会显示一长串网站，这些网站可帮助创建支持各种平台和设备的 favicon。&lt;/p>
-&lt;p>我为这个案例选择的是 &lt;a class="link" href="https://favicon.io/" target="_blank" rel="noopener"
->favicon.io&lt;/a>,
-同样也可以用 &lt;a class="link" href="https://realfavicongenerator.net/" target="_blank" rel="noopener"
->realfavicongenerator.net&lt;/a> 来完成。&lt;/p>
-&lt;h2 id="具体操作">具体操作&lt;/h2>
-&lt;p>我用的hugo主题是：hugo-theme-stack&lt;/p>
-&lt;p>我所要做的就是将我需要的图片上传到 favicon.io，然后出现一个包含我需要的一切的 zip 文件。 下载该文件后，我解压了 zip 文件并将内容复制到我的 Hugo 站点的&lt;code>static&lt;/code>文件夹中：&lt;/p>
-&lt;p>&lt;img src="https://example.com/p/%E6%B7%BB%E5%8A%A0favicon%E5%88%B0hugo%E7%9A%84%E7%BD%91%E7%AB%99%E4%B8%AD/20230206210004.png"
-width="418"
-height="557"
-srcset="https://example.com/p/%E6%B7%BB%E5%8A%A0favicon%E5%88%B0hugo%E7%9A%84%E7%BD%91%E7%AB%99%E4%B8%AD/20230206210004_hu250231a738d2d3c2e241a334d26863c9_34294_480x0_resize_box_3.png 480w, https://example.com/p/%E6%B7%BB%E5%8A%A0favicon%E5%88%B0hugo%E7%9A%84%E7%BD%91%E7%AB%99%E4%B8%AD/20230206210004_hu250231a738d2d3c2e241a334d26863c9_34294_1024x0_resize_box_3.png 1024w"
-loading="lazy"
-alt="static 文件夹"
-class="gallery-image"
-data-flex-grow="75"
-data-flex-basis="180px"
->&lt;/p>
-&lt;blockquote>
-&lt;p>按照&lt;a class="link" href="https://stack.jimmycai.com/config/site#favicon" target="_blank" rel="noopener"
->Hugo Stack官网&lt;/a>指引，在&lt;code>config.yaml&lt;/code>中修改&lt;code>favicon: /favicon.ico&lt;/code>后，我的图标依然没有出现。&lt;/p>
-&lt;/blockquote>
-&lt;p>于是我复制下载页面上生成的 HTML 片段并将其粘贴到 &lt;code>myblog/layouts/partials/head/custom.html&lt;/code>&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;span class="lnt">3
-&lt;/span>&lt;span class="lnt">4
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-html" data-lang="html">&lt;span class="line">&lt;span class="cl">&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">link&lt;/span> &lt;span class="na">rel&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;apple-touch-icon&amp;#34;&lt;/span> &lt;span class="na">sizes&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;180x180&amp;#34;&lt;/span> &lt;span class="na">href&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;/apple-touch-icon.png&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">link&lt;/span> &lt;span class="na">rel&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;icon&amp;#34;&lt;/span> &lt;span class="na">type&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;image/png&amp;#34;&lt;/span> &lt;span class="na">sizes&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;32x32&amp;#34;&lt;/span> &lt;span class="na">href&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;/favicon-32x32.png&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">link&lt;/span> &lt;span class="na">rel&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;icon&amp;#34;&lt;/span> &lt;span class="na">type&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;image/png&amp;#34;&lt;/span> &lt;span class="na">sizes&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;16x16&amp;#34;&lt;/span> &lt;span class="na">href&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;/favicon-16x16.png&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">link&lt;/span> &lt;span class="na">rel&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;manifest&amp;#34;&lt;/span> &lt;span class="na">href&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;/site.webmanifest&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>就是这样！希望你们也能成功~&lt;/p></description></item><item><title>TestOps Plantform First Demo</title><link>https://example.com/p/testops-plantform-first-demo/</link><pubDate>Wed, 08 Jan 2020 23:51:50 +0800</pubDate><guid>https://example.com/p/testops-plantform-first-demo/</guid><description>&lt;p>&lt;a class="link" href="https://github.com/ellaann/TestOpsPlatform" target="_blank" rel="noopener"
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Edrain’s Blog</title><link>https://example.com/</link><description>Recent content on Edrain’s Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 08 Jan 2020 23:51:50 +0800</lastBuildDate><atom:link href="https://example.com/index.xml" rel="self" type="application/rss+xml"/><item><title>TestOps Plantform First Demo</title><link>https://example.com/p/testops-plantform-first-demo/</link><pubDate>Wed, 08 Jan 2020 23:51:50 +0800</pubDate><guid>https://example.com/p/testops-plantform-first-demo/</guid><description>&lt;p>&lt;a class="link" href="https://github.com/ellaann/TestOpsPlatform" target="_blank" rel="noopener"
 >源码地址&lt;/a>&lt;/p>
 &lt;h2 id="项目实现功能">项目实现功能&lt;/h2>
 &lt;p>1、注册&lt;/p>
@@ -676,7 +615,68 @@ python交互式环境下测试:&lt;/p>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">pip install cryptography==2.4.2 # 本机执行
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div></description></item><item><title>About</title><link>https://example.com/about/</link><pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate><guid>https://example.com/about/</guid><description>&lt;h2 id="-站主是谁">🍭 站主是谁？&lt;/h2>
+&lt;/div></description></item><item><title>添加Favicon到Hugo的网站中</title><link>https://example.com/p/%E6%B7%BB%E5%8A%A0favicon%E5%88%B0hugo%E7%9A%84%E7%BD%91%E7%AB%99%E4%B8%AD/</link><pubDate>Sat, 03 Mar 2018 00:00:00 +0000</pubDate><guid>https://example.com/p/%E6%B7%BB%E5%8A%A0favicon%E5%88%B0hugo%E7%9A%84%E7%BD%91%E7%AB%99%E4%B8%AD/</guid><description>&lt;h2 id="什么是favicon">什么是favicon&lt;/h2>
+&lt;p>favicon，是单词“favorite icon”的缩写，是一个帮助用户在视觉上识别和区分您的网站的小图标。 其主要目的是帮助访问者在打开多个选项卡、书签、快捷方式和地址栏时更轻松地找到您的页面。&lt;/p>
+&lt;h2 id="转换地址">转换地址&lt;/h2>
+&lt;p>有这么多的平台、设备、图标格式和尺寸，很难确切地知道你应该怎么做才能在任何地方始终如一地展示你的网站图标/品牌。 这就是为什么有多个图标生成器可用的原因。 只需快速搜索“favicon generator”，就会显示一长串网站，这些网站可帮助创建支持各种平台和设备的 favicon。&lt;/p>
+&lt;p>我为这个案例选择的是 &lt;a class="link" href="https://favicon.io/" target="_blank" rel="noopener"
+>favicon.io&lt;/a>,
+同样也可以用 &lt;a class="link" href="https://realfavicongenerator.net/" target="_blank" rel="noopener"
+>realfavicongenerator.net&lt;/a> 来完成。&lt;/p>
+&lt;h2 id="具体操作">具体操作&lt;/h2>
+&lt;p>我用的hugo主题是：hugo-theme-stack&lt;/p>
+&lt;p>我所要做的就是将我需要的图片上传到 favicon.io，然后出现一个包含我需要的一切的 zip 文件。 下载该文件后，我解压了 zip 文件并将内容复制到我的 Hugo 站点的&lt;code>static&lt;/code>文件夹中：&lt;/p>
+&lt;p>&lt;img src="https://example.com/p/%E6%B7%BB%E5%8A%A0favicon%E5%88%B0hugo%E7%9A%84%E7%BD%91%E7%AB%99%E4%B8%AD/20230206210004.png"
+width="418"
+height="557"
+srcset="https://example.com/p/%E6%B7%BB%E5%8A%A0favicon%E5%88%B0hugo%E7%9A%84%E7%BD%91%E7%AB%99%E4%B8%AD/20230206210004_hu250231a738d2d3c2e241a334d26863c9_34294_480x0_resize_box_3.png 480w, https://example.com/p/%E6%B7%BB%E5%8A%A0favicon%E5%88%B0hugo%E7%9A%84%E7%BD%91%E7%AB%99%E4%B8%AD/20230206210004_hu250231a738d2d3c2e241a334d26863c9_34294_1024x0_resize_box_3.png 1024w"
+loading="lazy"
+alt="static 文件夹"
+class="gallery-image"
+data-flex-grow="75"
+data-flex-basis="180px"
+>&lt;/p>
+&lt;blockquote>
+&lt;p>按照&lt;a class="link" href="https://stack.jimmycai.com/config/site#favicon" target="_blank" rel="noopener"
+>Hugo Stack官网&lt;/a>指引，在&lt;code>config.yaml&lt;/code>中修改&lt;code>favicon: /favicon.ico&lt;/code>后，我的图标依然没有出现。&lt;/p>
+&lt;/blockquote>
+&lt;p>于是我复制下载页面上生成的 HTML 片段并将其粘贴到 &lt;code>myblog/layouts/partials/head/custom.html&lt;/code>&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-html" data-lang="html">&lt;span class="line">&lt;span class="cl">&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">link&lt;/span> &lt;span class="na">rel&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;apple-touch-icon&amp;#34;&lt;/span> &lt;span class="na">sizes&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;180x180&amp;#34;&lt;/span> &lt;span class="na">href&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;/apple-touch-icon.png&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">link&lt;/span> &lt;span class="na">rel&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;icon&amp;#34;&lt;/span> &lt;span class="na">type&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;image/png&amp;#34;&lt;/span> &lt;span class="na">sizes&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;32x32&amp;#34;&lt;/span> &lt;span class="na">href&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;/favicon-32x32.png&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">link&lt;/span> &lt;span class="na">rel&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;icon&amp;#34;&lt;/span> &lt;span class="na">type&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;image/png&amp;#34;&lt;/span> &lt;span class="na">sizes&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;16x16&amp;#34;&lt;/span> &lt;span class="na">href&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;/favicon-16x16.png&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">&amp;lt;&lt;/span>&lt;span class="nt">link&lt;/span> &lt;span class="na">rel&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;manifest&amp;#34;&lt;/span> &lt;span class="na">href&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="s">&amp;#34;/site.webmanifest&amp;#34;&lt;/span>&lt;span class="p">&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>就是这样！希望你们也能成功~&lt;/p></description></item><item><title>常用Hugo指令</title><link>https://example.com/p/%E5%B8%B8%E7%94%A8hugo%E6%8C%87%E4%BB%A4/</link><pubDate>Mon, 05 Feb 2018 00:00:00 +0000</pubDate><guid>https://example.com/p/%E5%B8%B8%E7%94%A8hugo%E6%8C%87%E4%BB%A4/</guid><description>&lt;h2 id="新建一个-hugo-网站">新建一个 Hugo 网站。&lt;/h2>
+&lt;ol>
+&lt;li>进入你想存放 Hugo 网站文件夹的目录。如果你想放在 &lt;code>Documents&lt;/code> 目录下，在终端里执行 &lt;code>cd ~/Documents&lt;/code> 即可。&lt;/li>
+&lt;li>执行以下命令新建一个 Hugo 网站。&lt;code>hugo new site myblog&lt;/code> # &amp;ldquo;myblog&amp;rdquo; 是我的网站文件夹名。&lt;/li>
+&lt;li>选择主题clone到本地&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">cd ~/myblog # 进入网站目录，用你的网站目录名替换 &amp;#34;myblog&amp;#34;。
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">git clone https://github.com/CaiJimmy/hugo-theme-stack/ themes/hugo-theme-stack
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="启动hugo">启动Hugo&lt;/h2>
+&lt;p>&lt;code>hugo server -D&lt;/code>
+使用浏览器打开 http://localhost:1313 预览。&lt;/p>
+&lt;h2 id="构建-hugo-网站">构建 Hugo 网站&lt;/h2>
+&lt;p>在 Hugo 网站文件夹的根目录下，执行 hugo 命令来构建。
+&lt;code>hugo # 构建你的 Hugo 网站，默认将静态站点保存到 &amp;quot;public&amp;quot; 目录。&lt;/code>&lt;/p></description></item><item><title>About</title><link>https://example.com/about/</link><pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate><guid>https://example.com/about/</guid><description>&lt;h2 id="-站主是谁">🍭 站主是谁？&lt;/h2>
 &lt;ul>
 &lt;li>又菜又爱玩&lt;/li>
 &lt;li>网球1.0&lt;/li>
